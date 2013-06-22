@@ -77,7 +77,6 @@ class EmrClient
 
   def run_jobflow(jobflow)
     logger.trace "RunJobFlow(#{jobflow.inspect})"
-    p jobflow
     result = @client.RunJobFlow(jobflow)
     logger.trace result.inspect
     return raise_on_error(result)
