@@ -7,7 +7,7 @@ require 'emr/commands'
 require 'amazon/retry_delegator'
 require 'amazon/coral/elasticmapreduceclient'
 
-class EmrClient
+class Emr::Client
   attr_accessor :commands, :logger, :options
 
   def initialize(commands, logger, client_class)

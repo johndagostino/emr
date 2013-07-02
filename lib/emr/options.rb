@@ -1,0 +1,3 @@
+module Emr::Options
+
+end

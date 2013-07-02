@@ -2,7 +2,7 @@
 #
 # Copyright 2008-2011 Amazon.com, Inc. or its affiliates.  All Rights Reserved.
 
-require 'emr/commands'
+require 'emr/command_loader'
 require 'emr/simple_logger'
 require 'emr/simple_executor'
 
@@ -10,7 +10,7 @@ exit_code = 0
 begin
   logger = SimpleLogger.new
   executor = SimpleExecutor.new
-  commands = Commands::create_and_execute_commands(
+  commands = Emr::CommandLoader.create_and_execute_commands(
     ARGV, Amazon::Coral::ElasticMapReduceClient, logger, executor
   )
 rescue SystemExit => e
